@@ -265,8 +265,8 @@ var Body = function() {
 
   function updateCamera() {
     var now = Date.now() * 0.0003;
-    camera.position.x = Math.sin(now) * 30;
-    camera.position.z = Math.cos(now) * 10;
+    //camera.position.x = Math.sin(now) * 30;
+    //camera.position.z = Math.cos(now) * 10;
     camera.lookAt(scene.position);
   }
 
