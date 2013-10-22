@@ -1,4 +1,4 @@
-var Stars = function(scene) {
+var Stars = function(scene){
 
 	var scene = scene;
 	var starGroup, starEmitter;
@@ -8,17 +8,17 @@ var Stars = function(scene) {
 
 	function init() {
 		starGroup = new ShaderParticleGroup({
-			texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
+			texture: THREE.ImageUtils.loadTexture('./img/star.png'),
 			maxAge: maxAge,
 			blending: THREE.AdditiveBlending
 		});
 
 		starEmitter = new ShaderParticleEmitter({
-			positionSpread: new THREE.Vector3(200, 100, 100),
-			//velocitySpread: new THREE.Vector3(20, 10, 10),
-
-			acceleration: new THREE.Vector3(0, -10, 0),
-			accelerationSpread: new THREE.Vector3(4, 2, 4),
+			type: "sphere",
+			position: new THREE.Vector3(0, 30, 0),
+			positionSpread: new THREE.Vector3(200, 30, 10),
+			radius: 0.01,
+			radiusScale: new THREE.Vector3(1,1,1),
 
 
 			colorStart: new THREE.Color('white'),

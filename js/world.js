@@ -4,6 +4,7 @@ var World = function() {
 	var scene, camera, renderer, stats, stats2, clock;
 	var bgScene, bgCam;
 	var body, body2;
+	var snow;
 	var stars;
 
 	function init() {
@@ -38,7 +39,7 @@ var World = function() {
 		var bgMesh = new THREE.Mesh(
 			new THREE.PlaneGeometry(2, 2, 0),
 			new THREE.MeshBasicMaterial({
-				map: THREE.ImageUtils.loadTexture("img/path.jpg")
+				map: THREE.ImageUtils.loadTexture("img/pathdark.png")
 			})
 		)
 
@@ -71,6 +72,7 @@ var World = function() {
 	function render(dt) {
 		body.tick(dt);
 		body2.tick(dt)
+		snow.tick(dt)
 		stars.tick(dt)
 		renderer.autoClear = false;
 		renderer.clear();
@@ -90,6 +92,7 @@ var World = function() {
 	}, false);
 
 	init();
+	snow = new Snow(scene);
 	stars = new Stars(scene);
 	initBodies();
 
