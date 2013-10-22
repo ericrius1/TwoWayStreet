@@ -12,9 +12,10 @@ var Body = function(scene, basePosX, basePosY) {
 
   var basePositionX = basePosX;  
   var basePositionY = basePosY;
-  var increment = 5;
+  var increment = 2;
   var radius = .0003;
   var size = 1;
+  var maxAge = 1;
 
   // Create particle group and rootEmitter
 
@@ -22,38 +23,38 @@ var Body = function(scene, basePosX, basePosY) {
 
     rootChakra = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: 2
+      maxAge: maxAge
     });
 
     sacralChakra = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: 2
+      maxAge: maxAge
     });
 
     manipuraChakra = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: 2
+      maxAge: maxAge
     });
 
     heartChakra = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: 2
+      maxAge: maxAge
     });
 
 
     throatChakra = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: 2
+      maxAge: 1
     });
 
     ajnaChakra = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: 2
+      maxAge: 1
     });
 
     crownChakra = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: 2
+      maxAge: 1
     });
 
 
