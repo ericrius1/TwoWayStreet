@@ -3,6 +3,7 @@ var World = function() {
 	// variables used in init()
 	var scene, camera, renderer, stats, stats2, clock;
 	var bgScene, bgCam;
+	var body, body2;
 
 	function init() {
 		initBackground();
@@ -23,6 +24,13 @@ var World = function() {
 
 		document.body.appendChild(renderer.domElement);
 		document.body.appendChild(stats.domElement);
+	}
+
+	function initBodies() {
+		body = new Body(scene, 0, -30);
+		body2 = new Body(scene, 10, -30);
+		body.initParticles();
+		body2.initParticles(); 
 	}
 
 	function initBackground() {
@@ -61,6 +69,7 @@ var World = function() {
 
 	function render(dt) {
 		body.tick(dt);
+		body2.tick(dt)
 		renderer.autoClear = false;
 		renderer.clear();
 		updateCamera();
@@ -80,8 +89,8 @@ var World = function() {
 	}, false);
 
 	init();
-	var body = new Body(scene);
-	body.initParticles();
+	initBodies();
+
 
 	setTimeout(animate, 0);
 

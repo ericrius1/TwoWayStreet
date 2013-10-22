@@ -1,4 +1,4 @@
-var Body = function(scene) {
+var Body = function(scene, basePosX, basePosY) {
 
   // variables used in init()
   var scene = scene;
@@ -10,9 +10,11 @@ var Body = function(scene) {
   var ajnaChakra, ajnaEmitter;
   var crownChakra, crownEmitter;
 
-  var basePosition = -30;
-  var increment = 10;
-  var radius = 3;
+  var basePositionX = basePosX;  
+  var basePositionY = basePosY;
+  var increment = 5;
+  var radius = .0003;
+  var size = 1;
 
   // Create particle group and rootEmitter
 
@@ -59,8 +61,7 @@ var Body = function(scene) {
     //****ROOOOT******
     rootEmitter = new ShaderParticleEmitter({
       type: 'sphere',
-
-      position: new THREE.Vector3(0, basePosition, 0),
+      position: new THREE.Vector3(basePositionX, basePositionY, 0),
 
       radius: radius,
       speed: 2,
@@ -68,7 +69,7 @@ var Body = function(scene) {
       colorStart: new THREE.Color('red'),
       colorSpread: new THREE.Vector3(0, 0.5, 0),
       colorEnd: new THREE.Color('red'),
-      size: 5,
+      size:  1,
       sizeEnd: 0,
 
       opacityStart: 0,
@@ -83,7 +84,7 @@ var Body = function(scene) {
     sacralEmitter = new ShaderParticleEmitter({
       type: 'sphere',
 
-      position: new THREE.Vector3(0, basePosition + increment, 0),
+      position: new THREE.Vector3(basePositionX, basePositionY + increment, 0),
 
       radius: radius,
       speed: 2,
@@ -91,7 +92,7 @@ var Body = function(scene) {
       colorStart: new THREE.Color('#ED8326'),
       // colorSpread: new THREE.Vector3(.2, 0.2, 0.2),
       colorEnd: new THREE.Color('#ED8324'),
-      size: 5,
+      size:  1,
       sizeEnd: 0,
 
       opacityStart: 0,
@@ -105,7 +106,7 @@ var Body = function(scene) {
     manipuraEmitter = new ShaderParticleEmitter({
       type: 'sphere',
 
-      position: new THREE.Vector3(0, basePosition + (increment * 2), 0),
+      position: new THREE.Vector3(basePositionX, basePositionY + (increment * 2), 0),
 
       radius: radius,
       speed: 2,
@@ -113,7 +114,7 @@ var Body = function(scene) {
       colorStart: new THREE.Color('yellow'),
       colorSpread: new THREE.Vector3(.1, .1, .1),
       colorEnd: new THREE.Color('yellow'),
-      size: 5,
+      size:  1,
       sizeEnd: 0,
 
       opacityStart: 0,
@@ -127,7 +128,7 @@ var Body = function(scene) {
     heartEmitter = new ShaderParticleEmitter({
       type: 'sphere',
 
-      position: new THREE.Vector3(0, basePosition + (increment * 3), 0),
+      position: new THREE.Vector3(basePositionX, basePositionY + (increment * 3), 0),
 
       radius: radius,
       speed: 2,
@@ -135,7 +136,7 @@ var Body = function(scene) {
       colorStart: new THREE.Color('green'),
       colorSpread: new THREE.Vector3(0.5, 0.5, 0.5),
       colorEnd: new THREE.Color('green'),
-      size: 5,
+      size:  1,
       sizeEnd: 0,
 
       opacityStart: 0,
@@ -149,7 +150,7 @@ var Body = function(scene) {
     throatEmitter = new ShaderParticleEmitter({
       type: 'sphere',
 
-      position: new THREE.Vector3(0, basePosition + (increment * 4), 0),
+      position: new THREE.Vector3(basePositionX, basePositionY + (increment * 4), 0),
 
       radius: radius,
       speed: 2,
@@ -157,7 +158,7 @@ var Body = function(scene) {
       colorStart: new THREE.Color('blue'),
       colorSpread: new THREE.Vector3(1, 1, 1),
       colorEnd: new THREE.Color('blue'),
-      size: 5,
+      size:  1,
       sizeEnd: 0,
 
       opacityStart: 0,
@@ -171,7 +172,7 @@ var Body = function(scene) {
     ajnaEmitter = new ShaderParticleEmitter({
       type: 'sphere',
 
-      position: new THREE.Vector3(0, basePosition + (increment * 5), 0),
+      position: new THREE.Vector3(basePositionX, basePositionY + (increment * 5), 0),
 
       radius: radius,
       speed: 2,
@@ -179,7 +180,7 @@ var Body = function(scene) {
       colorStart: new THREE.Color('purple'),
       colorSpread: new THREE.Vector3(2, 2, 2),
       colorEnd: new THREE.Color('purple'),
-      size: 5,
+      size:  1,
       sizeEnd: 0,
 
       opacityStart: 0,
@@ -193,7 +194,7 @@ var Body = function(scene) {
     crownEmitter = new ShaderParticleEmitter({
       type: 'sphere',
 
-      position: new THREE.Vector3(0, basePosition + (increment * 6), 0),
+      position: new THREE.Vector3(basePositionX, basePositionY + (increment * 6), 0),
 
       radius: radius,
       speed: 2,
@@ -201,7 +202,7 @@ var Body = function(scene) {
       colorStart: new THREE.Color('violet'),
       colorSpread: new THREE.Vector3(1, 1, 1),
       colorEnd: new THREE.Color('violet'),
-      size: 5,
+      size:  1,
       sizeEnd: 0,
 
       opacityStart: 0,
