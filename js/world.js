@@ -4,6 +4,7 @@ var World = function() {
 	var scene, camera, renderer, stats, stats2, clock;
 	var bgScene, bgCam;
 	var body, body2;
+	var stars;
 
 	function init() {
 		initBackground();
@@ -28,7 +29,7 @@ var World = function() {
 
 	function initBodies() {
 		body = new Body(scene, 4, -5);
-		body2 = new Body(scene, 16, -5);
+		body2 = new Body(scene, 15, -5);
 		body.initParticles();
 		body2.initParticles(); 
 	}
@@ -70,13 +71,13 @@ var World = function() {
 	function render(dt) {
 		body.tick(dt);
 		body2.tick(dt)
+		stars.tick(dt)
 		renderer.autoClear = false;
 		renderer.clear();
 		updateCamera();
 		renderer.render(bgScene, bgCam);
 		renderer.render(scene, camera);
 	}
-
 
 	window.addEventListener('resize', function() {
 		var w = window.innerWidth,
@@ -89,6 +90,7 @@ var World = function() {
 	}, false);
 
 	init();
+	stars = new Stars(scene);
 	initBodies();
 
 

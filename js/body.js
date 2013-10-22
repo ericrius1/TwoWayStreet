@@ -16,6 +16,10 @@ var Body = function(scene, basePosX, basePosY) {
   var radius = .0003;
   var size = 1;
   var maxAge = 1;
+  var pps = 2000;
+  var opacityStart = 0.05;
+  var opacityMiddle = 0.1;
+  var opacityEnd= 0.05;
 
   // Create particle group and rootEmitter
 
@@ -73,11 +77,11 @@ var Body = function(scene, basePosX, basePosY) {
       size:  1,
       sizeEnd: 0,
 
-      opacityStart: 0,
-      opacityMiddle: 1,
-      opacityEnd: 0,
+      opacityStart: opacityStart,
+      opacityMiddle: opacityMiddle,
+      opacityEnd: opacityEnd,
 
-      particlesPerSecond: 5000
+      particlesPerSecond: pps
     });
 
 
@@ -96,11 +100,11 @@ var Body = function(scene, basePosX, basePosY) {
       size:  1,
       sizeEnd: 0,
 
-      opacityStart: 0,
-      opacityMiddle: 1,
-      opacityEnd: 0,
+      opacityStart: opacityStart,
+      opacityMiddle: opacityMiddle,
+      opacityEnd: opacityEnd,
 
-      particlesPerSecond: 5000
+      particlesPerSecond: pps
     });
 
     //*****MANUPURA**********
@@ -118,11 +122,11 @@ var Body = function(scene, basePosX, basePosY) {
       size:  1,
       sizeEnd: 0,
 
-      opacityStart: 0,
-      opacityMiddle: 1,
-      opacityEnd: 0,
+      opacityStart: opacityStart,
+      opacityMiddle: opacityMiddle,
+      opacityEnd: opacityEnd,
 
-      particlesPerSecond: 5000
+      particlesPerSecond: pps
     });
 
     //*****HEART**********
@@ -140,11 +144,11 @@ var Body = function(scene, basePosX, basePosY) {
       size:  1,
       sizeEnd: 0,
 
-      opacityStart: 0,
-      opacityMiddle: 1,
-      opacityEnd: 0,
+      opacityStart: opacityStart,
+      opacityMiddle: opacityMiddle,
+      opacityEnd: opacityEnd,
 
-      particlesPerSecond: 5000
+      particlesPerSecond: pps
     });
 
     //*****THROAT**********
@@ -162,11 +166,11 @@ var Body = function(scene, basePosX, basePosY) {
       size:  1,
       sizeEnd: 0,
 
-      opacityStart: 0,
-      opacityMiddle: 1,
-      opacityEnd: 0,
+      opacityStart: opacityStart,
+      opacityMiddle: opacityMiddle,
+      opacityEnd: opacityEnd,
 
-      particlesPerSecond: 5000
+      particlesPerSecond: pps
     });
 
     //*****AJNA**********
@@ -184,11 +188,11 @@ var Body = function(scene, basePosX, basePosY) {
       size:  1,
       sizeEnd: 0,
 
-      opacityStart: 0,
-      opacityMiddle: 1,
-      opacityEnd: 0,
+      opacityStart: opacityStart,
+      opacityMiddle: opacityMiddle,
+      opacityEnd: opacityEnd,
 
-      particlesPerSecond: 5000
+      particlesPerSecond: pps
     });
 
     //*****CROWN**********
@@ -206,11 +210,11 @@ var Body = function(scene, basePosX, basePosY) {
       size:  1,
       sizeEnd: 0,
 
-      opacityStart: 0,
-      opacityMiddle: 1,
-      opacityEnd: 0,
+      opacityStart: opacityStart,
+      opacityMiddle: opacityMiddle,
+      opacityEnd: opacityEnd,
 
-      particlesPerSecond: 5000
+      particlesPerSecond: pps
     });
 
     rootChakra.addEmitter(rootEmitter);
