@@ -2,8 +2,10 @@ var World = function() {
 
 	// variables used in init()
 	var scene, camera, renderer, stats, stats2, clock;
+	var bgScene, bgCam;
 
 	function init() {
+		initBackground();
 		scene = new THREE.Scene();
 		camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
 		camera.position.z = 50;
@@ -21,6 +23,24 @@ var World = function() {
 
 		document.body.appendChild(renderer.domElement);
 		document.body.appendChild(stats.domElement);
+	}
+
+	function initBackground() {
+		var bgMesh = new THREE.Mesh(
+			new THREE.PlaneGeometry(2, 2, 0),
+			new THREE.MeshBasicMaterial({
+				map: THREE.ImageUtils.loadTexture("img/path.jpg")
+			})
+		)
+
+		// The bg plane shouldn't care about the z-buffer.
+		bgMesh.material.depthTest = false;
+		bgMesh.material.depthWrite = false;
+
+		bgScene = new THREE.Scene();
+		bgCam = new THREE.Camera()
+		bgScene.add(bgCam);
+		bgScene.add(bgMesh);
 	}
 
 
@@ -41,7 +61,10 @@ var World = function() {
 
 	function render(dt) {
 		body.tick(dt);
+		renderer.autoClear = false;
+		renderer.clear();
 		updateCamera();
+		renderer.render(bgScene, bgCam);
 		renderer.render(scene, camera);
 	}
 

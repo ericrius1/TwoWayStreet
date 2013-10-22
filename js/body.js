@@ -41,7 +41,7 @@ var Body = function(scene) {
 
     throatChakra = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: 20
+      maxAge: 2
     });
 
     ajnaChakra = new ShaderParticleGroup({
@@ -159,8 +159,6 @@ var Body = function(scene) {
       colorEnd: new THREE.Color('blue'),
       size: 5,
       sizeEnd: 0,
-
-      emitterDuration: 3,
 
       opacityStart: 0,
       opacityMiddle: 1,
