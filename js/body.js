@@ -1,6 +1,6 @@
 var Body = function(scene, basePosX, basePosY) {
 
-  // variables used in init()
+
   var scene = scene;
   var chakraGroup;
   var rootEmitter,
