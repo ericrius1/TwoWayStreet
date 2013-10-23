@@ -33,11 +33,11 @@ var Stars = function(scene) {
         speed: 0,
 
         colorStart: new THREE.Color('white'),
-        colorEnd: new THREE.Color('purpl'),
+        colorEnd: new THREE.Color('purple'),
         size: 7,
         sizeEnd: 1,
         opacityStart: 0,
-        opacityMiddle: 1,
+        opacityMiddle: 0.8,
         opacityEnd: 0,
         emitterDuration: Math.random() * 240,
 
