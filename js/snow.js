@@ -19,7 +19,7 @@ var Snow = function(scene) {
 			velocitySpread: new THREE.Vector3(0, -2, 0),
 
 			acceleration: new THREE.Vector3(0, -1, 0),
-			accelerationSpread: new THREE.Vector3(4, 0.01, 4),
+			accelerationSpread: new THREE.Vector3(Math.random() * 3, 0.01, 4),
 
 
 			colorStart: new THREE.Color('white'),
