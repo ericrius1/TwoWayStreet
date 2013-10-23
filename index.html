@@ -18,13 +18,13 @@
   <script type="text/javascript" src="./build/ShaderParticles.min.js"></script>
 
 
-  <audio id= "song" src="Flower.mp3" onCanPlay = "playSong()"></audio>
+  <audio id= "song" src="audio/Flower.mp3" onCanPlay = "playSong()"></audio>
 
 
   <script>
+    var world = new World();
   var playSong = function(){
     var song = document.getElementById("song");
-    var world = new World();
     song.play();
   }
    

@@ -2,7 +2,7 @@ var Snow = function(scene) {
 
 	var scene = scene;
 	var snowGroup, snowEmitter;
-	var maxAge = 20;
+	var maxAge = 15;
 
 	init();
 
@@ -14,7 +14,7 @@ var Snow = function(scene) {
 		});
 
 		snowEmitter = new ShaderParticleEmitter({
-			position: new THREE.Vector3(0, 20, 1),
+			position: new THREE.Vector3(0, 50, 1),
 			positionSpread: new THREE.Vector3(200, 10, 10),
 			velocitySpread: new THREE.Vector3(0, -2, 0),
 
@@ -24,13 +24,13 @@ var Snow = function(scene) {
 
 			colorStart: new THREE.Color('white'),
 			colorEnd: new THREE.Color('white'),
-			size: 2,
+			size: 3,
 			sizeEnd: 2,
 			opacityStart: 0,
 			opacityMiddle: 1,
 			opacityEnd: 0,
 
-			particlesPerSecond: 500
+			particlesPerSecond: 600
 		});
 		snowGroup.addEmitter(snowEmitter);
 		scene.add(snowGroup.mesh);
