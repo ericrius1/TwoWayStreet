@@ -13,9 +13,9 @@ var Body = function(scene, basePosX, basePosY) {
   var basePositionX = basePosX;  
   var basePositionY = basePosY;
   var increment = 2;
-  var radius = .0003;
-  var size = 1;
-  var maxAge = 1;
+  var radius = .3;
+  var size = 10;
+  var maxAge = 4;
   var pps = 2000;
   var opacityStart = 0.05;
   var opacityMiddle = 0.1;
@@ -48,17 +48,17 @@ var Body = function(scene, basePosX, basePosY) {
 
     throatChakra = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: 1
+      maxAge: maxAge
     });
 
     ajnaChakra = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: 1
+      maxAge: maxAge
     });
 
     crownChakra = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: 1
+      maxAge: maxAge
     });
 
 

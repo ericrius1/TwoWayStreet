@@ -26,7 +26,7 @@ var Stars = function(scene) {
 			starEmitter = new ShaderParticleEmitter({
 				type: "sphere",
 				position: new THREE.Vector3(xPos, yPos, 0),
-				radius: 200,
+				radius: 2000,
                 radiusScale: new THREE.Vector3(1, 1, 1),
 				speed: 0,
 
