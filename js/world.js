@@ -36,7 +36,7 @@ var World = function() {
 		var bgMesh = new THREE.Mesh(
 			new THREE.PlaneGeometry(2, 2, 0),
 			new THREE.MeshBasicMaterial({
-				map: THREE.ImageUtils.loadTexture("img/pathdark.png")
+				map: THREE.ImageUtils.loadTexture("img/pathdark.jpg")
 			})
 		)
 
