@@ -1,7 +1,7 @@
 var World = function() {
 
 	// variables used in init()
-	var scene, camera, renderer, stats, stats2, clock;
+	var scene, camera, renderer, clock;
 	var bgScene, bgCam;
 	var body, body2;
 	var snow;
@@ -18,14 +18,11 @@ var World = function() {
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.setClearColor(0x000000);
 
-		stats = new Stats();
 		clock = new THREE.Clock();
 
-		stats.domElement.style.position = 'absolute';
-		stats.domElement.style.top = '0';
 
 		document.body.appendChild(renderer.domElement);
-		document.body.appendChild(stats.domElement);
+
 	}
 
 	function initBodies() {
@@ -59,12 +56,11 @@ var World = function() {
 
 		// Using a fixed time-step here to avoid pauses
 		render(0.016);
-		stats.update();
 	}
 
 	function updateCamera() {
 		var now = Date.now() * 0.0003;
-    camera.position.x = Math.sin(now) * 5;
+    camera.position.x = Math.sin(now) * 2;
 		camera.lookAt(scene.position);
 	}
 
@@ -87,8 +83,9 @@ var World = function() {
 		camera.aspect = w / h;
 		camera.updateProjectionMatrix();
 
+
 		renderer.setSize(w, h);
-	}, false);
+	},false);
 
 	init();
 	snow = new Snow(scene);

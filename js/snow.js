@@ -14,7 +14,7 @@ var Snow = function(scene) {
 		});
 
 		snowEmitter = new ShaderParticleEmitter({
-			position: new THREE.Vector3(0, 50, 1),
+			position: new THREE.Vector3(0, 20, 1),
 			positionSpread: new THREE.Vector3(200, 10, 10),
 			velocitySpread: new THREE.Vector3(0, -2, 0),
 

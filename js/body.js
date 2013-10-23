@@ -231,9 +231,6 @@ var Body = function(scene, basePosX, basePosY) {
     scene.add(throatChakra.mesh);
     scene.add(ajnaChakra.mesh);
     scene.add(crownChakra.mesh);
-
-    document.querySelector('.numParticles').textContent =
-      'Total particles: ' + rootEmitter.numParticles;
   }
 
   var tick = function(dt){
