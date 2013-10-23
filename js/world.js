@@ -26,8 +26,8 @@ var World = function() {
 	}
 
 	function initBodies() {
-		body = new Body(scene, 3.5, -5);
-		body2 = new Body(scene, 15.5, -4);
+		body = new Body(scene, 4.5, -5);
+		body2 = new Body(scene, 16.5, -4);
 		body.initParticles();
 		body2.initParticles(); 
 	}

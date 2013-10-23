@@ -2,15 +2,16 @@ var Body = function(scene, basePosX, basePosY) {
 
   // variables used in init()
   var scene = scene;
-  var rootChakra, rootEmitter;
-  var sacralChakra, sacralEmitter;
-  var manipuraChakra, manipuraEmitter;
-  var heartChakra, heartEmitter;
-  var throatChakra, throatEmitter;
-  var ajnaChakra, ajnaEmitter;
-  var crownChakra, crownEmitter;
+  var chakraGroup;
+  var rootEmitter,
+    sacralEmitter,
+    manipuraEmitter,
+    heartEmitter,
+    throatEmitter,
+    ajnaEmitter,
+    crownEmitter;
 
-  var basePositionX = basePosX;  
+  var basePositionX = basePosX;
   var basePositionY = basePosY;
   var increment = 2;
   var radius = .3;
@@ -19,44 +20,15 @@ var Body = function(scene, basePosX, basePosY) {
   var pps = 2000;
   var opacityStart = 0.05;
   var opacityMiddle = 0.1;
-  var opacityEnd= 0.05;
+  var opacityEnd = 0.05;
+  var chakraGroup;
 
   // Create particle group and rootEmitter
 
   var initParticles = function() {
+    console.log('init')
 
-    rootChakra = new ShaderParticleGroup({
-      texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: maxAge
-    });
-
-    sacralChakra = new ShaderParticleGroup({
-      texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: maxAge
-    });
-
-    manipuraChakra = new ShaderParticleGroup({
-      texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: maxAge
-    });
-
-    heartChakra = new ShaderParticleGroup({
-      texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: maxAge
-    });
-
-
-    throatChakra = new ShaderParticleGroup({
-      texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: maxAge
-    });
-
-    ajnaChakra = new ShaderParticleGroup({
-      texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
-      maxAge: maxAge
-    });
-
-    crownChakra = new ShaderParticleGroup({
+    chakraGroup = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
       maxAge: maxAge
     });
@@ -74,7 +46,7 @@ var Body = function(scene, basePosX, basePosY) {
       colorStart: new THREE.Color('red'),
       colorSpread: new THREE.Vector3(0, 0.5, 0),
       colorEnd: new THREE.Color('red'),
-      size:  1,
+      size: 1,
       sizeEnd: 0,
 
       opacityStart: opacityStart,
@@ -97,7 +69,7 @@ var Body = function(scene, basePosX, basePosY) {
       colorStart: new THREE.Color('#ED8326'),
       // colorSpread: new THREE.Vector3(.2, 0.2, 0.2),
       colorEnd: new THREE.Color('#ED8324'),
-      size:  1,
+      size: 1,
       sizeEnd: 0,
 
       opacityStart: opacityStart,
@@ -119,7 +91,7 @@ var Body = function(scene, basePosX, basePosY) {
       colorStart: new THREE.Color('yellow'),
       colorSpread: new THREE.Vector3(.1, .1, .1),
       colorEnd: new THREE.Color('yellow'),
-      size:  1,
+      size: 1,
       sizeEnd: 0,
 
       opacityStart: opacityStart,
@@ -141,7 +113,7 @@ var Body = function(scene, basePosX, basePosY) {
       colorStart: new THREE.Color('green'),
       colorSpread: new THREE.Vector3(0.5, 0.5, 0.5),
       colorEnd: new THREE.Color('green'),
-      size:  1,
+      size: 1,
       sizeEnd: 0,
 
       opacityStart: opacityStart,
@@ -163,7 +135,7 @@ var Body = function(scene, basePosX, basePosY) {
       colorStart: new THREE.Color('blue'),
       colorSpread: new THREE.Vector3(1, 1, 1),
       colorEnd: new THREE.Color('blue'),
-      size:  1,
+      size: 1,
       sizeEnd: 0,
 
       opacityStart: opacityStart,
@@ -185,7 +157,7 @@ var Body = function(scene, basePosX, basePosY) {
       colorStart: new THREE.Color('purple'),
       colorSpread: new THREE.Vector3(2, 2, 2),
       colorEnd: new THREE.Color('purple'),
-      size:  1,
+      size: 1,
       sizeEnd: 0,
 
       opacityStart: opacityStart,
@@ -207,7 +179,7 @@ var Body = function(scene, basePosX, basePosY) {
       colorStart: new THREE.Color('violet'),
       colorSpread: new THREE.Vector3(1, 1, 1),
       colorEnd: new THREE.Color('violet'),
-      size:  1,
+      size: 1,
       sizeEnd: 0,
 
       opacityStart: opacityStart,
@@ -217,30 +189,19 @@ var Body = function(scene, basePosX, basePosY) {
       particlesPerSecond: pps
     });
 
-    rootChakra.addEmitter(rootEmitter);
-    sacralChakra.addEmitter(sacralEmitter);
-    manipuraChakra.addEmitter(manipuraEmitter);
-    heartChakra.addEmitter(heartEmitter);
-    throatChakra.addEmitter(throatEmitter);
-    ajnaChakra.addEmitter(ajnaEmitter);
-    crownChakra.addEmitter(crownEmitter);
-    scene.add(rootChakra.mesh);
-    scene.add(sacralChakra.mesh);
-    scene.add(manipuraChakra.mesh);
-    scene.add(heartChakra.mesh);
-    scene.add(throatChakra.mesh);
-    scene.add(ajnaChakra.mesh);
-    scene.add(crownChakra.mesh);
+    chakraGroup.addEmitter(rootEmitter);
+    chakraGroup.addEmitter(sacralEmitter);
+    chakraGroup.addEmitter(manipuraEmitter);
+    chakraGroup.addEmitter(heartEmitter);
+    chakraGroup.addEmitter(throatEmitter);
+    chakraGroup.addEmitter(ajnaEmitter);
+    chakraGroup.addEmitter(crownEmitter);
+    scene.add(chakraGroup.mesh);
+
   }
 
-  var tick = function(dt){
-    rootChakra.tick(dt);
-    sacralChakra.tick(dt);
-    manipuraChakra.tick(dt);
-    heartChakra.tick(dt);
-    throatChakra.tick(dt);
-    ajnaChakra.tick(dt);
-    crownChakra.tick(dt);
+  var tick = function(dt) {
+    chakraGroup.tick(dt);
   }
   this.initParticles = initParticles;
   this.tick = tick;
