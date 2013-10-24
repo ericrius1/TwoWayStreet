@@ -39,7 +39,6 @@ var Stars = function(scene) {
         opacityStart: 0,
         opacityMiddle: 0.9,
         opacityEnd: 0,
-        emitterDuration: Math.random() * 240,
 
         particlesPerSecond: 100 + Math.random() *  500
       });
