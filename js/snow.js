@@ -2,7 +2,7 @@ var Snow = function(scene) {
 
 	var scene = scene;
 	var snowGroup, snowEmitter;
-	var maxAge = 7 + Math.random() * 7;
+	var maxAge = 7 + Math.random() * 14;
   setTimeout(init, 2000)
 
 
@@ -15,7 +15,7 @@ var Snow = function(scene) {
 
 		snowEmitter = new ShaderParticleEmitter({
 			position: new THREE.Vector3(0, 50, -1),
-			positionSpread: new THREE.Vector3(200, 10, 200),
+			positionSpread: new THREE.Vector3(200, 10, 100),
 			velocitySpread: new THREE.Vector3(0, -2, 0),
 
 			acceleration: new THREE.Vector3(0, -1, 0),

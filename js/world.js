@@ -60,8 +60,7 @@ var World = function() {
 
 	function updateCamera() {
 		var now = Date.now() * 0.0003;
-    camera.position.x = Math.sin(now) * 4;
-    camera.position.x = Math.sin(now) * 4;
+    camera.position.x = Math.sin(now) * 1;
 		camera.lookAt(scene.position);
 	}
 

@@ -2,12 +2,12 @@ var Stars = function(scene) {
 
   var scene = scene;
   var starGroup, starEmitter;
-  var maxAge = 2;
+  var maxAge = 4;
   var numStarGroups = 40;
   var radius = 30;
   var rand = Math.random;
   var starEmitters = [];
-  init();
+  setTimeout(init, 26500);
 
 
   function init() {
@@ -37,11 +37,11 @@ var Stars = function(scene) {
         size: 7,
         sizeEnd: 1,
         opacityStart: 0,
-        opacityMiddle: 0.8,
+        opacityMiddle: 0.9,
         opacityEnd: 0,
         emitterDuration: Math.random() * 240,
 
-        particlesPerSecond: 300
+        particlesPerSecond: 100 + Math.random() *  500
       });
       starEmitters.push(starEmitter);
       starGroup.addEmitter(starEmitter);
@@ -62,7 +62,7 @@ var Stars = function(scene) {
 
   var tick = function(dt) {
     updateEmitters();
-    starGroup.tick(dt);
+    starGroup && starGroup.tick(dt);
   }
 
   this.tick = tick;
