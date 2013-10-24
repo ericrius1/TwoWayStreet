@@ -2,9 +2,9 @@ var Snow = function(scene) {
 
 	var scene = scene;
 	var snowGroup, snowEmitter;
-	var maxAge = 15;
+	var maxAge = 7 + Math.random() * 7;
+  setTimeout(init, 2000)
 
-	init();
 
 	function init() {
 		snowGroup = new ShaderParticleGroup({
@@ -14,12 +14,12 @@ var Snow = function(scene) {
 		});
 
 		snowEmitter = new ShaderParticleEmitter({
-			position: new THREE.Vector3(0, 50, 1),
-			positionSpread: new THREE.Vector3(200, 10, 10),
+			position: new THREE.Vector3(0, 50, -1),
+			positionSpread: new THREE.Vector3(200, 10, 200),
 			velocitySpread: new THREE.Vector3(0, -2, 0),
 
 			acceleration: new THREE.Vector3(0, -1, 0),
-			accelerationSpread: new THREE.Vector3(Math.random() * 3, 0.01, 4),
+			accelerationSpread: new THREE.Vector3(Math.random() * 2, .001 * Math.random() * 0.05, Math.random() * 2),
 
 
 			colorStart: new THREE.Color('white'),
@@ -30,7 +30,7 @@ var Snow = function(scene) {
 			opacityMiddle: 1,
 			opacityEnd: 0,
 
-			particlesPerSecond: 600
+			particlesPerSecond: 500
 		});
 		snowGroup.addEmitter(snowEmitter);
 		scene.add(snowGroup.mesh);
@@ -38,7 +38,7 @@ var Snow = function(scene) {
 	}
 
 	var tick = function(dt){
-		snowGroup.tick(dt);
+		snowGroup && snowGroup.tick(dt);
 	}
 
 	this.tick = tick;

@@ -26,7 +26,6 @@ var Body = function(scene, basePosX, basePosY) {
   // Create particle group and rootEmitter
 
   var initParticles = function() {
-    console.log('init')
 
     chakraGroup = new ShaderParticleGroup({
       texture: THREE.ImageUtils.loadTexture('./img/smokeparticle.png'),
