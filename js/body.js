@@ -61,9 +61,9 @@ var Body = function(scene, basePosX, basePosY, xScale, yScale) {
 
 
 
-      opacityStart: 0,
-      opacityMiddle: 0.3,
-      opacityEnd: 0,
+      opacityStart: .01,
+      opacityMiddle: 0.11,
+      opacityEnd: 0.03,
 
       particlesPerSecond: bodyPps
     })
